@@ -25,7 +25,7 @@ If there is any change that may be applied to the HTML file maybe a class names 
 
 ## Development
 Mainly the javaScript dynamic features are added in this stage of the project development. The dynamic multi-section navigation bar, the focus state added to each section in the user's viewPort moreover the collapsible state of each section that is already collapsed by default and whenever clicked the section content will be displayed automatically. 
-There are other two more features added through this stage, the Scroll To Top button at the end of the page appearing when the user scrolls below the fold of the page using the `element.scrollIntoView({behaviour: "smooth", block:"end"},false)`, if it is clicked will return us back to the top of the page.
+There are other two more features added through this stage, the Scroll To Top button at the end of the page appearing when the user scrolls below the fold of the page using the `element.scrollIntoView({behavior: "smooth", block: "end"}, false)`, if it is clicked will return us back to the top of the page.
 The last feature in this stage is the static state of the navigation bar while the user is not scrolling, that state will be converted to its fixed position by scrolling the page. 
 
 ![Footerimage](https://raw.githubusercontent.com/navendu-pottekkat/awesome-readme/master/fooooooter.png)
