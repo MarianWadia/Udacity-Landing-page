@@ -16,7 +16,9 @@ This project is a fully complete functional project having the static HTML & CSS
 You can use this project eaisly after downlodaing it by navigating project folders and files and open them using editor, there is a css folder having the styles.css file, a js folder having app.js file, and lastly the file of HTML as index.html. 
 
 ## Installation
-you can install this project either by clonning it or download it as a zip file.
+you can install this project either by:
+* clonning the remote repository to your local machine so that you can follow along. To clone, you can use `(git clone https://github.com/MarianWadia/Udacity-Landing-page.git)` command on your terminal. When you clone a remote repository, you get an identical copy locally, where you can make desired changes.
+* Fork the remote repository to your own online account. When you fork a remote repository, a new duplicate copy of the remote repository is created in your account.
 
 ## Project Dependencies
 If there is any change that may be applied to the HTML file maybe a class names or ids or something else, make sure to check if it should be changed in both css and javaScriot files as well, as all the three files HTML, CSS, javaScript are dependent on each other in most of the items.
