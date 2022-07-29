@@ -72,5 +72,6 @@ of the visible area of the scrollable ancestor */
 
 function toTop(){
     const topView = document.querySelector('h1');
-    topView.scrollIntoView(false);
+    topView.scrollIntoView({behavior: "smooth", block: "end"}, false);
 }
+
