@@ -1,19 +1,23 @@
 // build the nav
 const navBarList = document.getElementById('navbar__list');
 const sectionsList = document.querySelectorAll('section');
+const topView = document.querySelector('h1');
+const navHeader = document.querySelector('.page__header');
+(function(){
 for(let i=0; i<sectionsList.length; i++){
     const section = sectionsList[i];
     const navLink = document.createElement('li');
-    navLink.innerHTML = `<a href="#section${i+1}" class="menu__link" > ${section.dataset.nav} </a>`;
+    navLink.innerHTML = `<a class="menu__link" > ${section.dataset.nav} </a>`;
     navBarList.appendChild(navLink);
 }
+}());
 
 // Scroll to anchor ID using scrollIntoView event
-const navItems = document.querySelectorAll('li');
+const navItems = document.querySelectorAll('a');
 for(let i=0; i<sectionsList.length; i++){
     for(let x=0; x<navItems.length; x++){
         navItems[x].addEventListener('click', function(event){
-            event.preventDefault();
+            // event.preventDefault();
             if(i===x){
                 sectionsList[i].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
                 /* behaviour proerty defines how to scroll to the element view, block property defines vertical 
@@ -24,7 +28,6 @@ for(let i=0; i<sectionsList.length; i++){
 }
 
 // hide nav bar when no scroll 
-const navHeader = document.querySelector('.page__header');
 document.addEventListener('scroll', function(){
     navHeader.style.position = "fixed";
     //using setTimeout to wait sometime before appling the static position 
@@ -36,15 +39,24 @@ document.addEventListener('scroll', function(){
 
 // Adding the 'active' class to section when near top of viewport
 document.addEventListener('scroll', function(){
-    for (section of sectionsList){
-    sectionRect = section.getBoundingClientRect();
-    //console.log(sectionRect.top); //here we have applied this in order to correctly get the values that we used to check over 
-     if(sectionRect.top<= 45 && sectionRect.top>-555){
-        section.classList.add("active-sec");
-     }
-     else{
-         section.classList.remove("active-sec");
+    for(let i=0; i<sectionsList.length; i++){
+    const sectionRect = sectionsList[i].getBoundingClientRect();
+    for(let y=0; y<navItems.length; y++){
+        if(sectionRect.top<= 45 && sectionRect.top>-555){
+            sectionsList[i].classList.add("active-sec");
+            //Adding the active state to the navitems corresponding to the section inside the viewport 
+            if(i===y){
+                navItems[y].classList.add("active-nav");
+            }
+            else{
+                navItems[y].classList.remove("active-nav");
+            }  
         }
+        else{
+            sectionsList[i].classList.remove("active-sec");
+        }
+    }
+    
 }
 });
 
@@ -71,7 +83,5 @@ for(let i=0; i<elementsOfCollapse.length; i++){
 of the visible area of the scrollable ancestor */
 
 function toTop(){
-    const topView = document.querySelector('h1');
     topView.scrollIntoView({behavior: "smooth", block: "end"}, false);
 }
-
