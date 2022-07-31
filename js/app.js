@@ -1,8 +1,8 @@
-// build the nav
 const navBarList = document.getElementById('navbar__list');
 const sectionsList = document.querySelectorAll('section');
 const topView = document.querySelector('h1');
 const navHeader = document.querySelector('.page__header');
+//bulding the vav using a self invoking function
 (function(){
 for(let i=0; i<sectionsList.length; i++){
     const section = sectionsList[i];
