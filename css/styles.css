@@ -235,7 +235,12 @@ section.active-sec .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
-
+/* styling the active nav items when corresponding section is inside the viewport*/
+.navbar__menu li .active-nav{
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+}
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
 	from {
