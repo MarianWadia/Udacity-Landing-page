@@ -17,7 +17,6 @@ const navItems = document.querySelectorAll('a');
 for(let i=0; i<sectionsList.length; i++){
     for(let x=0; x<navItems.length; x++){
         navItems[x].addEventListener('click', function(event){
-            // event.preventDefault();
             if(i===x){
                 sectionsList[i].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
                 /* behaviour proerty defines how to scroll to the element view, block property defines vertical 
